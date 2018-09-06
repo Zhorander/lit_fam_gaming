@@ -17,7 +17,9 @@ function menu.draw()
     love.graphics.rectangle('fill', rect_x, rect_y, .6 * width, .2 * height)
 
     love.graphics.setColor(0,0,0)
-    love.graphics.printf('LIT FAM', rect_x * 2, rect_y * 1.7, 200, 'center')
+    love.graphics.printf('LIT FAM GAMING', rect_x * 2, rect_y * 1.7, 200, 'center')
+    love.graphics.print('START', rect_x * 1, 250)
+    love.graphics.print('SETTINGS', rect_x * 1, 300)
 
 end
 
