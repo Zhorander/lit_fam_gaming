@@ -76,7 +76,7 @@ a = 3 or 'thing' -- a = 3
 a = false or 'thing' -- a = 'thing'
 a = nil or 'thing' -- a = 'thing'
 
-a = 3 and 'thing' -- a = 3
+a = 3 and 'thing' -- a = 'thing'
 a = 3 and nil -- a = nil
 a = false and 3 -- a = false
 
@@ -101,7 +101,7 @@ t = {
 -- We can make just an array too
 t = {1,2,3,4,'what am i doing here?', function() print('hi') end}
 
---if we want to insert values seuentially we can use table.insert()
+--if we want to insert values sequentially we can use table.insert()
 for i=1,20 do
     table.insert(t, i)
 end
