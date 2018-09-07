@@ -1,20 +1,18 @@
 -- main.lua
 -- entry point of the game
 
+local Stack = require('util.stack')
+local Context = require('util.context')
 local menu = require('menu.menu')
 
-function love.load()
-    font = love.graphics.newFont('assets/truthwillout.ttf', 50)
-    love.graphics.setFont(font)
-    love.graphics.setBackgroundColor(255,25,255)
-    menu.load()
-    --other.load()
-end
+--Create global stack so any module can pop or push contexts
+contextStack = Stack:new()
 
-function love.update()
-    menu.update()
-end
+--Create contexts of all modules
+menuContext = Context:new(menu)
 
-function love.draw()
-    menu.draw()
-end
+--We'll start in the menu context
+contextStack:push(menuContext)
+
+local currentContext = contextStack:peek()
+currentContext:set()
