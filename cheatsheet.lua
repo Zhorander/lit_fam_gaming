@@ -80,10 +80,17 @@ a = 3 and 'thing' -- a = 'thing'
 a = 3 and nil -- a = nil
 a = false and 3 -- a = false
 
+a ~= 2 --a not equal to 2, true
+
+not a -- true
+not nil -- true
+not false -- true
+not 2 -- false
+
 --<><><><><> Tables <><><><><>
 
 t = {} --table with nothing in it
-t.['thing'] = 'other thing'
+t['thing'] = 'other thing'
 --same as
 t.thing = 'other thing'
 t[1] = 23
@@ -142,6 +149,16 @@ a,b = (funtion() return 2,3 end)()
 --functions without a return statement implicitly return nil
 a = (function() end)()
 print(a) -- nil
+
+--methods
+t = {}
+function t.fun(self) end
+--same as
+function t:fun() end
+
+t:fun()
+--same as
+t.fun(t)
 
 --<><><><><> Metatables <><><><><>
 -- Metatables are just tables with fun functions, kinda
