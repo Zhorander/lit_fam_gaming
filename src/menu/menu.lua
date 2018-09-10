@@ -13,8 +13,17 @@ function menu.load()
     love.graphics.setFont(font)
     love.graphics.setBackgroundColor(255,25,255)
 
-    start = gui:button('START', {x = width * .2, y = 250, w = 128, h = gui.style.unit})
-    quit = gui:button('QUIT', {x = width * .2, y = 250 + gui.style.unit, w = 128, h = gui.style.unit})
+    start = gui:button('START', {x = width * .2, y = 250, w = 256, h = gui.style.unit * 1.5})
+    quit = gui:button('QUIT', {x = width * .2, y = 250 + gui.style.unit * 1.5, w = 256, h = gui.style.unit * 1.5})
+
+    start.style.font = love.graphics.newFont(20)
+    quit.style.font = love.graphics.newFont(20)
+
+    start.style.default =  {0, 255, 153}
+    quit.style.default =  {0, 255, 153}
+
+    start.style.fg = {0, 0, 0}
+    quit.style.fg = {0, 0, 0}
 
     function start:click(x, y) print('Ouch!') end
     function quit:click(x,y) love.quit() end
@@ -56,6 +65,13 @@ end
 
 function menu.quit()
     os.exit()
+end
+
+
+function menu.keypressed(key)
+    if key == 'escape' then
+        love.quit()
+    end
 end
 
 return menu
