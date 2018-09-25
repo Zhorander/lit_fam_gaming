@@ -20,7 +20,7 @@ function TiledMap_Load (filepath,tilesize,spritepath_removeold,spritepath_prefix
     kTileSize = tilesize or kTileSize or 32
     gTileGfx = {}
  
-    local tiletype,layers = TiledMap_Parse(filepath)
+    local tiletype,layers = TiledMap_Parse(filepath)stack
     gMapLayers = layers
     for first_gid,path in pairs(tiletype) do
         path = spritepath_prefix .. string.gsub(path,"^"..string.gsub(spritepath_removeold,"%.","%%."),"")
