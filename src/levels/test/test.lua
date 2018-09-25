@@ -18,12 +18,12 @@ end
 function testLevel.keypressed( key, unicode ) 
 	gKeyPressed[key] = true 
 	if (key == "escape") then os.exit(0) end
-	if (key == " ") then -- space = next map
-		gMapNum = (gMapNum or 1) + 1
-		if (gMapNum > 10) then gMapNum = 1 end
-		TiledMap_Load(string.format("map/map%02d.tmx",gMapNum))
-		gCamX,gCamY = 100,100
-	end
+	-- if (key == " ") then -- space = next map
+	-- 	gMapNum = (gMapNum or 1) + 1
+	-- 	if (gMapNum > 10) then gMapNum = 1 end
+	-- 	TiledMap_Load(string.format("assets/map/test.tmx",gMapNum))
+	-- 	gCamX,gCamY = 100,100
+	-- end
 end
  
 function testLevel.update( dt )

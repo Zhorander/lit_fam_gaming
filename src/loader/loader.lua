@@ -17,7 +17,7 @@ gTileMap_LayerInvisByName = {}
 function TiledMap_Load (filepath,tilesize,spritepath_removeold,spritepath_prefix)
     spritepath_removeold = spritepath_removeold or "../"
     spritepath_prefix = spritepath_prefix or ""
-    kTileSize = tilesize or kTileSize or 32
+    kTileSize = tilesize or kTileSize or 16
     gTileGfx = {}
  
     local tiletype,layers = TiledMap_Parse(filepath)
