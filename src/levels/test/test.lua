@@ -1,16 +1,19 @@
 local sti = require "sti"
+local test = {}
 
-function love.load()
+function test.load()
     -- Load map file
-    map = sti("assets.map.test.lua")
+    map = sti("assets\\map\\temp.lua")
 end
 
-function love.update(dt)
+function test.update(dt)
     -- Update world
     map:update(dt)
 end
 
-function love.draw()
+function test.draw()
     -- Draw world
     map:draw()
 end
+
+return test
