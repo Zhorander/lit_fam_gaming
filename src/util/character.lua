@@ -13,7 +13,7 @@ function Character:new(child, id, path, sprite_size)
     child.image = love.graphics.newImage(path)
     child.quad = love.graphics.newQuad(0, 0, sprite_size, sprite_size, child.image:getDimensions())
 
-    return path
+    return child
 end
 
 -- set the quadrant position for the sprite
@@ -24,8 +24,12 @@ function Character:setQuad(x, y)
 end
 
 function Character:setPos(x, y)
-    child.x = x
-    child.y = y
+    self.x = x
+    self.y = y
+end
+
+function Character:getPos()
+    return self.x, self.y
 end
 
 function Character:getId()
@@ -37,7 +41,7 @@ function Character:setId(id)
 end
 
 function Character:draw()
-    love.graphics.draw(image, character, self.x, self.y)
+    love.graphics.draw(self.image, self.quad, self.x, self.y)
 end
 
 return Character
