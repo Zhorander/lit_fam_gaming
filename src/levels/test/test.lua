@@ -3,7 +3,7 @@ local test = {}
 
 function test.load()
     -- Load map file
-    map = sti("assets\\map\\temp.lua")
+    map = sti("assets/map/temp.lua")
 end
 
 function test.update(dt)
