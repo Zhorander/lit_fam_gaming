@@ -47,12 +47,12 @@ return {
       height = 132,
       visible = true,
       opacity = 1,
-      offsetx = 0,
-      offsety = 0,
+      offsetx = -149,
+      offsety = -167,
       properties = {},
       encoding = "base64",
       compression = "zlib",
-      data = "eJzt1k0KgmAUhtHbz8RqVG0kagMOhfa/nm7QByINchBX8Bx4EGcfvohGsES37D6jR80xV6PPumzzuXaj+2/1Ncdcjffzbc/aHvXGe/ySPf5r+n5ss122D3tUmO5xyI7ZKexRoe3Rvhvn7JJdwx4Vhpj3v/usOSYAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAALBAL93KCV0="
+      data = "eJzt2MEKgkAUBVCtNlar6keifsBl0P9/T09oMQwk5kwicQ7cjSgMXnwz2DSs0TVyq5j7ssv/O32ki7TvdEnakWwi28gue6Zfdvl/Z3h/6Xue2sc+cogcG33UlPcxNafIOXLJruujTN5HOofm9KSPMnkf6RzSx/LSPob5/2kOjcX+UU/ex5S9XB+/o491mXO+GutNH2XmfB/5femZTB9lavSRnsn0UWbOvMqTnsn0UebR1P2f+Fx2+QAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPCVFyyGEfc="
     }
   }
 }
