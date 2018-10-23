@@ -11,12 +11,12 @@ function camera:new()
     return setmetatable({}, {__index = self})
 end
 
-function camera:new_layer(scale, func)
+function camera:newLayer(scale, func)
     table.insert(self.layers, {draw = func, scale = scale})
     table.sort(self.layers, function(a, b) return a.scale < b.scale end)
 end
 
-function camera:set_position(nx, ny)
+function camera:setPosition(nx, ny)
     self.x = nx
     self.y = ny
 end
@@ -59,7 +59,7 @@ function camera:scale(sx, sy)
     self.scale_y = self.scale_y + sy
 end
 
-function camera:set_scale(sx, sy)
+function camera:setScale(sx, sy)
     self.scale_x = sx or self.scale_x
     self.scale_y = sy or self.scale_y
 end

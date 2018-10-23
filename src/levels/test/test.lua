@@ -12,6 +12,13 @@ function test.load()
 
     --load character
     character = Character:new(nil, 0, 'assets/RoguePlayer.png', 32)
+
+    --set player layer in camera
+    mainCamera:newLayer(3, function()character:draw();end)
+    --set background layer in camera
+    mainCamera:newLayer(1, function()map:draw();end)
+
+    --set camera to character's position
 end
 
 function test.update(dt)
@@ -26,7 +33,7 @@ function test.update(dt)
     if love.keyboard.isDown('w') then
         delta = step * dt
         local x, y = character:getPos()
-        character:setPos(x - delta, y)
+        character:setPos(x, y - delta)
     end
     if love.keyboard.isDown('s') then
         delta = step * dt
@@ -36,19 +43,22 @@ function test.update(dt)
     if love.keyboard.isDown('a') then
         delta = step * dt
         local x, y = character:getPos()
-        character:setPos(x, y - delta)
+        character:setPos(x - delta, y)
     end
 
+    --set camera to follow character's position
     local x, y = character:getPos()
-    mainCamera:set_position(x, y)
+    mainCamera:setPosition(x, y)
 end
 
 function test.draw()
-    -- Draw world
-    map:draw()
+    mainCamera:draw()
+end
 
-    --draw player
-    character:draw()
+function test.keypressed(key)
+    if key == 'q' then
+        love.event.push('q')
+    end
 end
 
 
