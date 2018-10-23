@@ -1,9 +1,9 @@
 local Character = require("util.character")
-
 local sti = require "sti"
-local test = {}
 
+local test = {}
 local step = 5
+local character = {}
 
 function test.load()
     -- Load map file
@@ -16,6 +16,9 @@ end
 function test.update(dt)
     -- Update world
     map:update(dt)
+
+    local x, y = character:getPos()
+    mainCamera:set_position(x, y)
 end
 
 function test.draw()
