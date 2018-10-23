@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <map version="1.0" tiledversion="1.1.6" orientation="orthogonal" renderorder="right-down" width="100" height="132" tilewidth="16" tileheight="16" infinite="0" nextobjectid="1">
  <tileset firstgid="1" source="test.tsx"/>
- <layer name="Tile Layer 1" width="100" height="132">
+ <layer name="Tile Layer 1" width="100" height="132" offsetx="-149" offsety="-167">
   <data encoding="base64" compression="zlib">
-   eJzt1k0KgmAUhtHbz8RqVG0kagMOhfa/nm7QByINchBX8Bx4EGcfvohGsES37D6jR80xV6PPumzzuXaj+2/1Ncdcjffzbc/aHvXGe/ySPf5r+n5ss122D3tUmO5xyI7ZKexRoe3Rvhvn7JJdwx4Vhpj3v/usOSYAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAALBAL93KCV0=
+   eJzt2MEKgkAUBVCtNlar6keifsBl0P9/T09oMQwk5kwicQ7cjSgMXnwz2DSs0TVyq5j7ssv/O32ki7TvdEnakWwi28gue6Zfdvl/Z3h/6Xue2sc+cogcG33UlPcxNafIOXLJruujTN5HOofm9KSPMnkf6RzSx/LSPob5/2kOjcX+UU/ex5S9XB+/o491mXO+GutNH2XmfB/5femZTB9lavSRnsn0UWbOvMqTnsn0UebR1P2f+Fx2+QAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPCVFyyGEfc=
   </data>
  </layer>
 </map>
