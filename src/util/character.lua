@@ -1,7 +1,7 @@
 local Actor = require "util.actor"
 
 local Character = {}
-Actor:new(Character)
+Actor:new(Character) -- Character is a child class of Actor
 
 function Character:new(child, id, path, sprite_size)
     local child = child or {}
@@ -15,6 +15,7 @@ function Character:new(child, id, path, sprite_size)
     child.y = 0
     child.x_dir = 1
     child.y_dir = 1
+    child.full_direction = 'right'
     child.rotation = 0
     child.animations = {}
     child.sprite_size = sprite_size
@@ -76,8 +77,15 @@ function Character:update(dt)
         self:doKeyAction('s', dt)
     elseif love.keyboard.isDown('a') then
         self:doKeyAction('a', dt)
-    elseif love.keyboard.isDown('space') then
+    end
+    if love.keyboard.isDown('space') then
         self:doKeyAction('space', dt)
+    end
+
+    if self.full_direction == 'up' then
+        self.quad = love.graphics.newQuad(self.sprite_size * 5, 2 * self.sprite_size, self.sprite_size, self.sprite_size, self.image:getDimensions())
+    else
+        self.quad = love.graphics.newQuad(0, 0, self.sprite_size, self.sprite_size, self.image:getDimensions())
     end
 end
 
