@@ -23,15 +23,14 @@ function test.update(dt)
 
     if love.keyboard.isDown('d') then
         character:doKeyAction('d', dt)   
-    end
-    if love.keyboard.isDown('w') then
+    elseif love.keyboard.isDown('w') then
         character:doKeyAction('w', dt)
-    end
-    if love.keyboard.isDown('s') then
+    elseif love.keyboard.isDown('s') then
         character:doKeyAction('s', dt)
-    end
-    if love.keyboard.isDown('a') then
+    elseif love.keyboard.isDown('a') then
         character:doKeyAction('a', dt)
+    elseif love.keyboard.isDown('space') then
+        character:doKeyAction(' ', dt)
     end
 
     --set camera to follow character's position

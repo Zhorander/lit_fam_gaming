@@ -8,6 +8,8 @@ function animation:new(image, width, height, duration)
     o.spriteSheet = image
     o.quads = {}
     o.finished = false
+    o.height = height
+    o.width = width
 
     for y = 0, image:getHeight() - height, height do
         for x = 0, image:getWidth() - width, width do
@@ -28,6 +30,21 @@ end
 
 function animation:isDone()
     return self.finished
+end
+
+--[[ setBounds
+     vstart - row start number
+     vend - row end number
+     hstart - column start number
+     hend - column end number
+]]
+function animation:setBounds(vstart, vend, hstart, hend)
+    self.quads = {}
+    for y = (vstart * self.height) - self.height, (self.height * vend) - self.height, self.height do
+        for x = (hstart * self.width) - self.width, (self.width * hend) - self.width, self.width do
+            table.insert(self.quads, love.graphics.newQuad(x, y, self.width, self.height, self.spriteSheet:getDimensions()))
+        end
+    end
 end
 
 function animation:update(dt)
