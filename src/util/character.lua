@@ -13,7 +13,9 @@ function Character:new(child, id, path, sprite_size)
     child.step = 100
     child.x = 0
     child.y = 0
-    child.direction = 'right'
+    child.x_dir = 1
+    child.y_dir = 1
+    child.rotation = 0
     child.animations = {}
     child.sprite_size = sprite_size
     child.currentAnimation = nil
@@ -50,9 +52,9 @@ end
 function Character:draw()
     --if we're running an animation, then don't draw the character over it
     if self.currentAnimation then
-        self.currentAnimation:draw(self.x, self.y)
+        self.currentAnimation:draw(self.x, self.y, self.rotation, self.x_dir, self.y_dir)
     else
-        love.graphics.draw(self.image, self.quad, self.x, self.y, 0, 1, 1)
+        love.graphics.draw(self.image, self.quad, self.x, self.y, self.rotation, self.x_dir, self.y_dir)
     end
 end
 

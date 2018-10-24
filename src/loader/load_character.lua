@@ -11,12 +11,20 @@ function CharacterLoader:create(path, id, size, x, y)
     --set character actions
     char:setKeyAction('d', function(char, dt)
         local x, y = char:getPos()
+
+        if char.x_dir == -1 then x = char.x - char.sprite_size end
+        char.x_dir = 1
+
         x = x + char.step * dt
         char.currentAnimation = char.animations.moveRight
         char:setPos(x, y)
     end)
     char:setKeyAction('a', function(char, dt)
         local x, y = char:getPos()
+        
+        if char.x_dir == 1 then x = char.x + char.sprite_size end
+        char.x_dir = -1
+
         x = x - char.step * dt
         char.currentAnimation = char.animations.moveLeft
         char:setPos(x, y)
@@ -24,7 +32,7 @@ function CharacterLoader:create(path, id, size, x, y)
     char:setKeyAction('s', function(char, dt)
         local x, y = char:getPos()
         y = y + char.step * dt
-        char.currentAnimation = char.animations.moveDown
+        char.currentAnimation = char.animations.moveRight
         char:setPos(x, y)
     end)
     char:setKeyAction('w', function(char, dt)
