@@ -20,8 +20,10 @@ function Actor:setKeyAction(key, action)
     self.keyboardActions[key] = action
 end
 
-function Actor:doKeyAction(key)
+function Actor:doKeyAction(key, dt)
     if self.keyboardActions[key] then
-        self.keyboardActions[key](self)
+        self.keyboardActions[key](self, dt)
     end
 end
+
+return Actor

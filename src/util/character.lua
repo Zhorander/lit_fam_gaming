@@ -1,4 +1,7 @@
+local Actor = require "util.actor"
+
 local Character = {}
+Actor:new(Character)
 
 function Character:new(child, id, path, sprite_size)
     local child = child or {}
@@ -7,9 +10,12 @@ function Character:new(child, id, path, sprite_size)
     self.__index = self
     child.id = id
     child.path = path
+    child.step = 100
     child.x = 0
     child.y = 0
+    child.animations = {}
     child.sprite_size = sprite_size
+    child.currentAnimation = nil
     child.image = love.graphics.newImage(path)
     child.quad = love.graphics.newQuad(0, 0, sprite_size, sprite_size, child.image:getDimensions())
 
@@ -41,7 +47,23 @@ function Character:setId(id)
 end
 
 function Character:draw()
-    love.graphics.draw(self.image, self.quad, self.x, self.y)
+    --if we're running an animation, then don't draw the character over it
+    if self.currentAnimation then
+        self.currentAnimation:draw(self.x, self.y)
+    else
+        love.graphics.draw(self.image, self.quad, self.x, self.y, 0, 1, 1)
+    end
+end
+
+function Character:update(dt)
+    --update currently running animation
+    if self.currentAnimation then
+        self.currentAnimation:update(dt)
+        --check if animation is finished
+        if self.currentAnimation:isDone() then
+            self.currentAnimation = nil
+        end
+    end
 end
 
 return Character

@@ -1,4 +1,4 @@
-local Character = require("util.character")
+local CharacterLoader = require "loader.load_character"
 local sti = require "sti"
 
 local step = 100
@@ -11,53 +11,41 @@ function test.load()
     map = sti("assets/map/temp.lua")
 
     --load character
-    character = Character:new(nil, 0, 'assets/RoguePlayer.png', 32)
-
-    --set player layer in camera
-    mainCamera:newLayer(3, function()character:draw();end)
-    --set background layer in camera
-    mainCamera:newLayer(1, function()map:draw();end)
-
-    --set camera to character's position
+    --character = Character:new(nil, 0, 'assets/RoguePlayer.png', 32)
+    character = CharacterLoader:create('assets/RoguePlayer.png', 0, 32, 1, 1)
 end
 
 function test.update(dt)
     -- Update world
     map:update(dt)
+    --update character
+    character:update(dt)
 
     if love.keyboard.isDown('d') then
-        delta = step * dt
-        local x, y = character:getPos()
-        character:setPos(x + delta, y)    
+        character:doKeyAction('d', dt)   
     end
     if love.keyboard.isDown('w') then
-        delta = step * dt
-        local x, y = character:getPos()
-        character:setPos(x, y - delta)
+        character:doKeyAction('w', dt)
     end
     if love.keyboard.isDown('s') then
-        delta = step * dt
-        local x, y = character:getPos()
-        character:setPos(x, y + delta)
+        character:doKeyAction('s', dt)
     end
     if love.keyboard.isDown('a') then
-        delta = step * dt
-        local x, y = character:getPos()
-        character:setPos(x - delta, y)
+        character:doKeyAction('a', dt)
     end
 
     --set camera to follow character's position
     local x, y = character:getPos()
-    mainCamera:setPosition(x, y)
 end
 
 function test.draw()
-    mainCamera:draw()
+    map:draw()
+    character:draw()
 end
 
 function test.keypressed(key)
     if key == 'q' then
-        love.event.push('q')
+        love.event.quit()
     end
 end
 
