@@ -33,7 +33,7 @@ function CharacterLoader:create(path, id, size, x, y)
         char.currentAnimation = char.animations.moveUp
         char:setPos(x, y)
     end)
-    char:setKeyAction(' ', function(char, dt)
+    char:setKeyAction('space', function(char, dt)
         char.currentAnimation = char.animations.attack
     end)
 

@@ -20,21 +20,6 @@ function test.update(dt)
     map:update(dt)
     --update character
     character:update(dt)
-
-    if love.keyboard.isDown('d') then
-        character:doKeyAction('d', dt)   
-    elseif love.keyboard.isDown('w') then
-        character:doKeyAction('w', dt)
-    elseif love.keyboard.isDown('s') then
-        character:doKeyAction('s', dt)
-    elseif love.keyboard.isDown('a') then
-        character:doKeyAction('a', dt)
-    elseif love.keyboard.isDown('space') then
-        character:doKeyAction(' ', dt)
-    end
-
-    --set camera to follow character's position
-    local x, y = character:getPos()
 end
 
 function test.draw()

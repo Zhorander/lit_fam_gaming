@@ -13,6 +13,7 @@ function Character:new(child, id, path, sprite_size)
     child.step = 100
     child.x = 0
     child.y = 0
+    child.direction = 'right'
     child.animations = {}
     child.sprite_size = sprite_size
     child.currentAnimation = nil
@@ -63,6 +64,18 @@ function Character:update(dt)
         if self.currentAnimation:isDone() then
             self.currentAnimation = nil
         end
+    end
+
+    if love.keyboard.isDown('d') then
+        self:doKeyAction('d', dt)   
+    elseif love.keyboard.isDown('w') then
+        self:doKeyAction('w', dt)
+    elseif love.keyboard.isDown('s') then
+        self:doKeyAction('s', dt)
+    elseif love.keyboard.isDown('a') then
+        self:doKeyAction('a', dt)
+    elseif love.keyboard.isDown('space') then
+        self:doKeyAction('space', dt)
     end
 end
 
