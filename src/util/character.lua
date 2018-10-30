@@ -57,6 +57,10 @@ function Character:draw()
     else
         love.graphics.draw(self.image, self.quad, self.x, self.y, self.rotation, self.x_dir, self.y_dir)
     end
+
+    love.graphics.print('x: '..string.format('%.0f',self.x) .. ' y: '..string.format('%.0f',self.y), 0, 0)
+    love.graphics.print('x_dir: '..self.x_dir .. ' y_dir: '..self.y_dir, 100, 0)
+    love.graphics.print('full direction: '..self.full_direction, 0, 20)
 end
 
 function Character:update(dt)
