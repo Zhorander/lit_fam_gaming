@@ -52,7 +52,25 @@ return {
       properties = {},
       encoding = "base64",
       compression = "zlib",
-      data = "eJzt2MEKgkAUBVCtNlar6keifsBl0P9/T09oMQwk5kwicQ7cjSgMXnwz2DSs0TVyq5j7ssv/O32ki7TvdEnakWwi28gue6Zfdvl/Z3h/6Xue2sc+cogcG33UlPcxNafIOXLJruujTN5HOofm9KSPMnkf6RzSx/LSPob5/2kOjcX+UU/ex5S9XB+/o491mXO+GutNH2XmfB/5femZTB9lavSRnsn0UWbOvMqTnsn0UebR1P2f+Fx2+QAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPCVFyyGEfc="
+      data = "eJzt17EOwiAUBdBWXapO6v9/q29wICQQ6KvR4ZzkLk27cAOPLgswYousn2xF1k5OkXPkUn1DXrnOo31cI7fIfdHH0Xrr3soj8oy8qufktc6hPT2R1zqH9PEb5exonUO9mB/Hmp3l+vguffyX2RnR64282f1Rv1feycjL9lHeycjbc69t/RsCAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAjHoDHfIDUw=="
+    },
+    {
+      type = "tilelayer",
+      name = "walls",
+      x = 0,
+      y = 0,
+      width = 100,
+      height = 132,
+      visible = true,
+      opacity = 1,
+      offsetx = 0,
+      offsety = 0,
+      properties = {
+        ["collidable"] = true
+      },
+      encoding = "base64",
+      compression = "zlib",
+      data = "eJzt2MEJgEAMAMFrSbQBn4L916MtCIcsOgP5hsD+MgZFyz3rxNnePf9z9vi+v9GjRY8WPVr0aNGjRY8WPVr0aNGjRY8WPVqOMfefeL57PgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADxyAdzUDqU="
     }
   }
 }
